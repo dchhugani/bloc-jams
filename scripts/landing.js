@@ -1,14 +1,21 @@
     var pointsArray =  document.getElementsByClassName('point');
 
-    var animatePoints = function(points) {
-
-         for (var i = 0; i < points.length; i++) {
-             points[i].style.opacity = 1;
-             points[i].style.transform = "scaleX(1) translateY(0)";
-             points[i].style.msTransform = "scaleX(1) translateY(0)";
-             points[i].style.WebkitTransform = "scaleX(1) translateY(0)";
+    var revealPoint = function(point) {
+             point.style.opacity = 1;
+             point.style.transform = "scaleX(1) translateY(0)";
+             point.style.msTransform = "scaleX(1) translateY(0)";
+             point.style.WebkitTransform = "scaleX(1) translateY(0)";
          };
-     };
+
+
+    var animatePoints = function(points) {
+        forEach(points, revealPoint);
+        
+        for (var i = 0; i < array.length; i++) {
+            revealPoint(i);
+        }
+
+    };
 
     window.onload = function() {
          // Automatically animate the points on a tall screen where scrolling can't trigger the animation
